@@ -1,0 +1,7 @@
+######################################################
+# ignore files list
+# https://help.github.com/articles/ignoring-files
+######################################################
+
+#Ubuntu GUI backup files
+*~
