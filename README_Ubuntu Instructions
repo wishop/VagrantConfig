@@ -28,3 +28,11 @@ Vagrant Installation on Ubuntu.
 	6.2 Install Chef: sudo gem install chef --no-ri --no-rdoc
 	6.3 Install Knife-solo: sudo gem install knife-solo
 	6.4 Configure Chef: 
+
+7. Verififaction: 
+	7.1 apache: open browser and hit against localhost
+	7.2 maven: $ mvn -version
+		7.2.1 maven install path: ls /usr/share/maven
+		7.2.2 maven config path: ls /etc/maven
+	7.3 postgresql : aptitude show postgresql
+
