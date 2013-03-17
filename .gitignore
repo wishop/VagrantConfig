@@ -5,3 +5,6 @@
 
 #Ubuntu GUI backup files
 *~
+
+#Vagrant hidden folder
+.vagrant/*
