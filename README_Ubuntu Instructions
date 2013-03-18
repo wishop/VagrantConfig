@@ -14,12 +14,11 @@ Vagrant Installation on Ubuntu.
 	3.3 Install virtualbox: sudo apt-get update && sudo apt-get install virtualbox-4.2
 	3.4 Check if it works: type virtualbox
 
-4. Install Vagrant
-	4.1 Go to http://downloads.vagrantup.com/ and install the latest version through Ubuntu Software Center
-	4.1 vagrant box add Precise http://files.vagrantup.com/precise32.box
-	4.2 vagrant init Precise
-	4.3 vagrant up 
-	4.4 Connect to it: vagrant ssh (default password = vagrant)
+4. Configure Vagrant (http://www.vagrantbox.es/) (http://docs-v1.vagrantup.com/v1/docs/boxes.html)
+        4.1 vagrant box add Precise http://files.vagrantup.com/precise32.box
+        4.2 vagrant init Precise
+        4.3 vagrant up
+        4.4 Connect to it: vagrant ssh (default password = vagrant)
 
 5. Install & Configure Chef
 	5.1 Update ruby: sudo apt-get install ruby ruby-dev libopenssl-ruby rdoc ri irb build-essential wget ssl-cert curl
@@ -33,3 +32,10 @@ Vagrant Installation on Ubuntu.
 			cookbook_path "/tmp/chef-solo/cookbooks"
 			recipe_url "http://s3.amazonaws.com/chef-solo/bootstrap-latest.tar.gz"
 		5.4.4 sudo chef-solo -o chef-server::rubygems-install
+
+6. Verififaction: 
+	6.1 apache: open browser and hit against http://localhost:8080
+	6.2 maven: $ mvn -version
+		7.2.1 maven install path: ls /usr/share/maven
+		7.2.2 maven config path: ls /etc/maven
+	6.3 postgresql : aptitude show postgresql
