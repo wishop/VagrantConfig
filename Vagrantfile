@@ -34,6 +34,14 @@ Vagrant.configure("2") do |config|
   # argument is a set of non-required options.
   # config.vm.synced_folder "../data", "/vagrant_data"
 
+
+  #Chef-solo and Knife-solo requirements
+  #Inform Vagrant about our Ruby tool dependencies and JSON handler
+  require 'rubygems'
+  require 'bundler'
+  #Bundler.require
+  require 'multi_json'
+
   # Provider-specific configuration so you can fine-tune various
   # backing providers for Vagrant. These expose provider-specific options.
   # Example for VirtualBox:
