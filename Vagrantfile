@@ -8,7 +8,7 @@ Vagrant.configure("2") do |config|
 
   # Every Vagrant virtual environment requires a box to build off of.
   config.vm.box = "precise64"
-  config.vm.provision :shell, :path => "provision.sh"
+  config.vm.provision :shell, :path => "shell_provision/provision.sh"
 
   # The url from where the 'config.vm.box' box will be fetched if it
   # doesn't already exist on the user's system.
@@ -89,18 +89,18 @@ Vagrant.configure("2") do |config|
   # path, and data_bags path (all relative to this Vagrantfile), and adding
   # some recipes and/or roles.
   #
-  #config.vm.provision :chef_solo do |chef|
-  #   chef.cookbooks_path = "../chef/cookbooks"
-  #   chef.roles_path = "../chef/roles"
-  #   chef.data_bags_path = "../chef/data_bags"
-  #   chef.add_recipe "mysql"
-  #   chef.add_role "web_server"
-  #   chef.add_role "application_server"
-  #   chef.add_role "database_server"
+  config.vm.provision :chef_solo do |chef|
+     chef.cookbooks_path = "../chef/cookbooks"
+     chef.roles_path = "../chef/roles"
+     chef.data_bags_path = "../chef/data_bags"
+     chef.add_role "web_server"
+     chef.add_role "application_server"
+     chef.add_role "database_server"
+     chef.add_role "dev_environment"
   #
   #   # You may also specify custom JSON attributes:
   #   chef.json = { :mysql_password => "foo" }
-  #end
+  end
 
   # Enable provisioning with chef server, specifying the chef server URL,
   # and the path to the validation key (relative to this Vagrantfile).
