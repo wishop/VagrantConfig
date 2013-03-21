@@ -1,4 +1,4 @@
-Vagrant Installation on Ubuntu.
+Vagrant Installation on Ubuntu..
 1. Install Git
 	1.1 sudo apt-get install git-core
 	1.2 Check Git version: git --version
