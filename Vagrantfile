@@ -8,7 +8,11 @@ Vagrant.configure("2") do |config|
 
   # Every Vagrant virtual environment requires a box to build off of.
   config.vm.box = "precise64"
-  config.vm.provision :shell, :path => "shell_provision/provision.sh"
+  #config.vm.provision :shell, :path => "shell_provision/provision.sh"
+  config.vm.provision :shell do |shell|
+    shell.path = "shell_provision/provision.sh"
+    shell.args = "cat shell_provision/eclipse_setup"
+  end
 
   # The url from where the 'config.vm.box' box will be fetched if it
   # doesn't already exist on the user's system.
