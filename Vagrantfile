@@ -39,15 +39,7 @@ Vagrant.configure("2") do |config|
   # the path on the host to the actual folder. The second argument is
   # the path on the guest to mount the folder. And the optional third
   # argument is a set of non-required options.
-  config.vm.synced_folder "shell_provision", "/opt/vagrant/shell_provision"
-
-
-  #Chef-solo and Knife-solo requirements
-  #Inform Vagrant about our Ruby tool dependencies and JSON handler
-  require 'rubygems'
-  require 'bundler'
-  #Bundler.require
-  require 'multi_json'
+  config.vm.synced_folder "./shell_provision", "/opt/vagrant/shell_provision"
 
   # Provider-specific configuration so you can fine-tune various
   # backing providers for Vagrant. These expose provider-specific options.
@@ -65,32 +57,13 @@ Vagrant.configure("2") do |config|
      vb.customize ["modifyvm", :id, "--natdnsproxy1", "on"]
      vb.customize ["modifyvm", :id, "--cpus", "2"]
    end
-  #
-  # View the documentation for the provider you're using for more
-  # information on available options.
 
-  # Enable provisioning with Puppet stand alone.  Puppet manifests
-  # are contained in a directory path relative to this Vagrantfile.
-  # You will need to create the manifests directory and a manifest in
-  # the file precise64.pp in the manifests_path directory.
-  #
-  # An example Puppet manifest to provision the message of the day:
-  #
-  # # group { "puppet":
-  # #   ensure => "present",
-  # # }
-  # #
-  # # File { owner => 0, group => 0, mode => 0644 }
-  # #
-  # # file { '/etc/motd':
-  # #   content => "Welcome to your Vagrant-built virtual machine!
-  # #               Managed by Puppet.\n"
-  # # }
-  #
-  # config.vm.provision :puppet do |puppet|
-  #   puppet.manifests_path = "manifests"
-  #   puppet.manifest_file  = "precise64.pp"
-  # end
+
+  #Chef-solo and Knife-solo requirements
+  #Inform Vagrant about our Ruby tool dependencies and JSON handler
+  require 'rubygems'
+  require 'bundler'
+  require 'multi_json'
 
   # Enable provisioning with chef solo, specifying a cookbooks path, roles
   # path, and data_bags path (all relative to this Vagrantfile), and adding
