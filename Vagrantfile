@@ -1,3 +1,8 @@
+
+########################################################################
+# Vagrant Documentation: http://docs.vagrantup.com/v2/getting-started/ #
+########################################################################
+
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
@@ -8,10 +13,8 @@ Vagrant.configure("2") do |config|
 
   # Every Vagrant virtual environment requires a box to build off of.
   config.vm.box = "precise64"
-  #config.vm.provision :shell, :path => "shell_provision/provision.sh"
   config.vm.provision :shell do |shell|
     shell.path = "shell_provision/provision.sh"
-    shell.args = "cat shell_provision/eclipse_setup"
   end
 
   # The url from where the 'config.vm.box' box will be fetched if it
@@ -36,7 +39,7 @@ Vagrant.configure("2") do |config|
   # the path on the host to the actual folder. The second argument is
   # the path on the guest to mount the folder. And the optional third
   # argument is a set of non-required options.
-  # config.vm.synced_folder "../data", "/vagrant_data"
+  config.vm.synced_folder "shell_provision", "/opt/vagrant/shell_provision"
 
 
   #Chef-solo and Knife-solo requirements
@@ -101,7 +104,7 @@ Vagrant.configure("2") do |config|
      chef.add_role "application_server"
      chef.add_role "database_server"
      chef.add_role "dev_environment"
-  #
+  
   #   # You may also specify custom JSON attributes:
   #   chef.json = { :mysql_password => "foo" }
   end
