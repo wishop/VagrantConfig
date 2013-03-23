@@ -17,7 +17,11 @@ if [ ! -d $ECLIPSE_DIR ]; then
 		tar -xvf $ECLIPSE_FILE -C /opt
 		sudo chown -R vagrant $ECLIPSE_DIR
 		sudo chgrp -R vagrant $ECLIPSE_DIR
+		
 		sudo chmod 777 $ECLIPSE_DIR/configuration
+		sudo chown -R vagrant $ECLIPSE_DIR/configuration
+		sudo chgrp -R vagrant $ECLIPSE_DIR/configuration
+		
 
 		#make it available to drag'n'drop to the Unity Launcher
 		mkdir -p $HOME/.local/share/applications
