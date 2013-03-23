@@ -11,12 +11,11 @@ if [ ! -d $ECLIPSE_DIR ]; then
 	#check if we already downloaded the Eclipse IDE archive
         if [ ! -f "$ECLIPSE_FILE" ]; then
                 wget -c -O$ECLIPSE_FILE "$ECLIPSE_URL"
-        fi
-        
-	if [ ! -f "$ECLIPSE_FILE" ]; then
-
-		tar -xvf $ECLIPSE_FILE
-		sudo mv $DOWNLOADS/eclipse /opt
+	else
+		tar -xvf $ECLIPSE_FILE -C /opt
+		sudo chown -R vagrant $ECLIPSE_DIR
+		sudo chgrp -R vagrant $ECLIPSE_DIR
+		sudo chmod 777 $ECLIPSE_DIR/configuration
 
         	#make it available to drag'n'drop to the Unity Launcher
 	        mkdir -p $HOME/.local/share/applications
