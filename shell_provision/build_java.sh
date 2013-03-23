@@ -6,11 +6,9 @@
 
 DIR=$1
 . $DIR/conf/provision.conf
-. $CONF/java.conf
 
-sudo cat $DATA/java >> /etc/apt/sources.list
-JAVA_VERSION=`javac -version 2>&1 | cut -c 1-9`
-if [ ! "$JAVA_VERSION" == "javac 1.7" ]; then
+JAVA_VERSION=javac -version 2>&1 | cut -c 1-9
+if [ "$JAVA_VERSION" != "javac 1.7" ]; then
 	echo "Installing Java..."
 
 	#remove existing versions
