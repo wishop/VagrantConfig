@@ -9,6 +9,9 @@ sudo chgrp -R vagrant /opt
 # OS Essential builds and updates
 $DIR/build_essentials.sh $DIR
 
+# Java Oracle build
+$DIR/build_java.sh $DIR
+
 # Eclipse build
 $DIR/build_eclipse.sh $DIR
 

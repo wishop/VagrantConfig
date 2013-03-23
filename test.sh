@@ -1,7 +1,6 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
-DIR="`pwd`/shell_provision"
-echo $DIR
-
-TEST=`ls /opt/vagrant/`
-echo $TEST
+JAVA_VERSION=`javac -version 2>&1 | grep "javac 1.7"`
+if [ -z "$JAVA_VERSION" ]; then
+echo "TEST"
+fi
