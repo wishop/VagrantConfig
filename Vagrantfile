@@ -62,8 +62,8 @@ Vagrant.configure("2") do |config|
   #Chef-solo and Knife-solo requirements
   #Inform Vagrant about our Ruby tool dependencies and JSON handler
   require 'rubygems'
-  require 'bundler'
-  require 'multi_json'
+  # require 'bundler'
+  # require 'multi_json'
 
   # Enable provisioning with chef solo, specifying a cookbooks path, roles
   # path, and data_bags path (all relative to this Vagrantfile), and adding
