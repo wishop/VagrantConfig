@@ -8,7 +8,7 @@ DIR=$1
 . ${DIR}/conf/provision.conf
 . ${CONF}/provision.conf
 
-if [ -d $POSTGRES_DIR ]; then
+if [ ! -d $POSTGRES_DIR ]; then
 	echo "Installing postgreSQL..."
 
 	sudo apt-get install -y postgresql pgadmin3
