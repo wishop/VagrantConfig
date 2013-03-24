@@ -17,7 +17,7 @@ if [ ! -d $JBOSS_DIR ]; then
 	
 	if [ -f $JBOSS_FILE ]; then
 		tar -xvf $JBOSS_FILE -C /opt
-	fi 
+	fi
 	
 	echo "Installing JBoss AS... Finish."
 fi
