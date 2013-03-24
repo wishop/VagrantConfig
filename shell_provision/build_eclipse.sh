@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 #########################################
-#         Install Eclipse & Git         #
+#      Install Eclipse, Maven & Git     #
 #########################################
 
 DIR=$1
@@ -26,17 +26,15 @@ if [ ! -d $ECLIPSE_DIR ]; then
 		sudo chown -R vagrant $ECLIPSE_DIR/configuration
 		sudo chgrp -R vagrant $ECLIPSE_DIR/configuration
 		
-
 		#make it available to drag'n'drop to the Unity Launcher
 		mkdir -p $HOME/.local/share/applications
 		cat $DATA/eclipse > $HOME/.local/share/applications/opt_eclipse.desktop
 		chmod +x $HOME/.local/share/applications/opt_eclipse.desktop
 
-		#Installing Git Plugins on Eclipse
-		$ECLIPSE_DIR/eclipse -application org.eclipse.equinox.p2.director -noSplash -repository http://download.eclipse.org/releases/juno -installIUs org.eclipse.egit.feature.group
-		$ECLIPSE_DIR/eclipse -application org.eclipse.equinox.p2.director -noSplash -repository http://download.eclipse.org/releases/juno -installIUs org.eclipse.jgit.feature.group
 	fi
 
 	sudo apt-get install -y git
+	sudo apt-get install -y maven
+	
 	echo "Installing Eclipse... Finish."
 fi

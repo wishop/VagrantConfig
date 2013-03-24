@@ -12,13 +12,10 @@ $DIR/build_essentials.sh $DIR
 # Java Oracle build
 $DIR/build_java.sh $DIR
 
-# Eclipse & Git build
+# Eclipse, Maven, MyLyn & Git build
 $DIR/build_eclipse.sh $DIR
 
-# Maven build
-$DIR/build_maven.sh $DIR
-
-# postgreSQL build
+# postgreSQL & postgreSQL Admin 3 build
 $DIR/build_postgresql.sh $DIR
 
 # keep things pristine
