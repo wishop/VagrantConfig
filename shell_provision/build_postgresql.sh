@@ -6,7 +6,7 @@
 
 DIR=$1
 . ${DIR}/conf/provision.conf
-. ${CONF}/provision.conf
+. ${CONF}/postgres.conf
 
 if [ ! -d $POSTGRES_DIR ]; then
 	echo "Installing postgreSQL..."

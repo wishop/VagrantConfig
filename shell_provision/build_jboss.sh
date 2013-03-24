@@ -5,7 +5,7 @@
 ##################################################
 
 DIR=$1
-. $CONF/jboss.conf
+. $DIR/conf/jboss.conf
 
 if [ ! -d $JBOSS_DIR ]; then
 	echo "Installing JBoss AS..."
