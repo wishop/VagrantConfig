@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
+#########################################
+#         Install Eclipse & Git         #
+#########################################
+
 DIR=$1
 . ${DIR}/conf/provision.conf
 . ${CONF}/eclipse.conf
