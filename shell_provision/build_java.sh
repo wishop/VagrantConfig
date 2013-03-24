@@ -1,8 +1,9 @@
 #!/usr/bin/env bash
 
-#########################################
-#        Install Oracle Java v7         #
-#########################################
+##################################################
+#             Install Oracle Java v7             #
+# http://www.duinsoft.nl/packages.php?t=en#repo  #
+##################################################
 
 DIR=$1
 . $DIR/conf/provision.conf
