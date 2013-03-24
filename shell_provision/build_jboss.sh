@@ -16,14 +16,10 @@ if [ ! -d $JBOSS_DIR ]; then
 	fi
 	
 	if [ -f $JBOSS_FILE ]; then
-		
 		sudo mkdir $JBOSS_DIR
 		sudo tar -zxvf $JBOSS_FILE -C $JBOSS_DIR --strip-components=1
 		sudo chown -R vagrant $JBOSS_DIR
 		sudo chgrp -R vagrant $JBOSS_DIR
-		
-		# configuring JBoss
-		
 	fi
 	
 	echo "Installing JBoss AS... Finish."
