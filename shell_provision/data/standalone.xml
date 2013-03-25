@@ -108,8 +108,8 @@
 						<prefill>true</prefill>
 					</pool>
 					<security>
-						<user-name>jboss</user-name>
-						<password>jb055mu</password>
+						<user-name>postgres</user-name>
+						<password>p0stgr3s</password>
 					</security>
 					<validation>
 						<check-valid-connection-sql>SELECT 1</check-valid-connection-sql>
