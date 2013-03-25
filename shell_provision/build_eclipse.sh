@@ -30,6 +30,10 @@ if [ ! -d $ECLIPSE_DIR ]; then
 		mkdir -p $HOME/.local/share/applications
 		cat $DATA/eclipse > $HOME/.local/share/applications/opt_eclipse.desktop
 		chmod +x $HOME/.local/share/applications/opt_eclipse.desktop
+		
+		#Installing Git Plugins on Eclipse
+		$ECLIPSE_DIR/eclipse -application org.eclipse.equinox.p2.director -noSplash -repository http://download.eclipse.org/technology/m2e/releases -installIUs org.eclipse.egit.feature.group
+		$ECLIPSE_DIR/eclipse -application org.eclipse.equinox.p2.director -noSplash -repository http://download.eclipse.org/technology/m2e/releases -installIUs org.eclipse.jgit.feature.group
 
 	fi
 
