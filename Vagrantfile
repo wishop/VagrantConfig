@@ -25,6 +25,10 @@ Vagrant.configure("2") do |config|
   # within the machine from a port on the host machine. In the example below,
   # accessing "localhost:8080" will access port 80 on the guest/host machine.
   config.vm.network :forwarded_port, guest: 80, host: 8080
+  config.vm.network :forwarded_port, guest: 8080, host: 8088
+  config.vm.network :forwarded_port, guest: 4447, host: 4447
+  # JBoss Admin Web Console
+  config.vm.network :forwarded_port, guest: 9990, host: 9990
 
   # Create a private network, which allows host-only access to the machine
   # using a specific IP.
