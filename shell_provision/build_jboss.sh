@@ -30,8 +30,9 @@ if [ ! -d $JBOSS_DIR ]; then
 		# a postInstall.sh will be created and will need to be executed from the CLI
 		# sudo $JBOSS_BIN/add-user.sh --silent jboss jb055mu
 		# sudo $JBOSS_BIN/add-user.sh --silent -a jbossau jb055au
-		sudo echo "./bin/add-user.sh --silent jboss jb055mu" > postInstall.sh
-		sudo echo "./bin/add-user.sh --silent -a jbossau jb055au" >> postInstall.sh
+		sudo echo "./bin/add-user.sh --silent jboss jb055mu" > $JBOSS_DIR/postInstall.sh
+		sudo echo "./bin/add-user.sh --silent -a jbossau jb055au" >> $JBOSS_DIR/postInstall.sh
+		sudo chmod 744 $JBOSS_DIR/postInstall.sh
 		
 		# configuring the connection between JBoss and Postgres
 		sudo mkdir -p $JBOSS_POSTGRES
