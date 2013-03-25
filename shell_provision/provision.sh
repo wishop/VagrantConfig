@@ -21,6 +21,9 @@ $DIR/build_postgresql.sh $DIR
 # JBoss AS build
 $DIR/build_jboss.sh $DIR
 
+# Apache2 build
+$DIR/build_apache.sh $DIR
+
 # keep things pristine
 sudo apt-get -y autoremove
 sudo apt-get clean
