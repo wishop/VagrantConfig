@@ -38,7 +38,8 @@ if [ ! -d $JBOSS_DIR ]; then
 		sudo mkdir -p $JBOSS_POSTGRES
 		sudo cp $LIB/$POSTGRES_JDBC4 $JBOSS_POSTGRES
 		sudo cp $DATA/module.xml $JBOSS_POSTGRES
-		sudo cp $DATA/standalone.xml ${JOSS_CONFIG}/.
+		sudo cp -p ${JOSS_CONFIG}/standalone.xml ${JBOSS_STANDALONE_BACKUP}/standalone_default.xml
+		sudo cp -f $DATA/standalone.xml ${JOSS_CONFIG}
 		
 		# correcting the permissions
 		sudo chown -R vagrant $JBOSS_DIR
