@@ -98,7 +98,7 @@
                         <password>sa</password>
                     </security>
                 </datasource>
-                <datasource jndi-name="java:jboss/datasources/PostgresDS" pool-name="PostgresDS">
+                <datasource jndi-name="java:jboss/datasources/PostgresDS" pool-name="PostgresDS" enabled="true" use-java-context="true">
 					<connection-url>jdbc:postgresql://localhost:5432/wishop</connection-url>
 					<driver-class>org.postgresql.Driver</driver-class>
 					<driver>postgresql-jdbc4</driver>
