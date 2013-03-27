@@ -1,0 +1,5 @@
+# Apache Web Server aliases
+alias startW="sudo /etc/init.d/apache2 start"
+alias stopW="sudo /etc/init.d/apache2 stop"
+alias restartW="sudo /etc/init.d/apache2 restart"
+alias statusW="sudo /etc/init.d/apache2 status"
