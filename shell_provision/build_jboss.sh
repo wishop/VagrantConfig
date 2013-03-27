@@ -6,6 +6,7 @@
 # - http://jdbc.postgresql.org/download.html                                                                           #
 # - http://jan.zawodny.pl/blog/2011/07/jboss-7-postgresql-9                                                            #
 # - https://docs.jboss.org/author/display/AS71/add-user+utility                                                        #
+# - http://www.jboss.org/jdf/quickstarts/jboss-as-quickstart/helloworld/                                               #
 # - https://docs.jboss.org/author/display/AS7/Deploying+the+Helloworld+example+using+Eclipse                           #
 # - http://stackoverflow.com/questions/14012549/how-to-install-postgresql-v9-1-and-jboss-as-v7-1-1-on-ubuntu-12-04-lts #
 ########################################################################################################################
@@ -46,6 +47,16 @@ if [ ! -d $JBOSS_DIR ]; then
 		# correcting the permissions
 		sudo chown -R vagrant $JBOSS_DIR
 		sudo chgrp -R vagrant $JBOSS_DIR
+		
+		# getting the JBoss quickstart examples
+		if [ ! -f $QUICKSTART_FILE ]; then
+			wget -c -O$QUICKSTART_FILE "$QUICKSTART_URL"
+		fi 
+		
+		if [ -f $QUICKSTART_FILE ]; then
+			sudo mkdir -p $QUICKSTART_DIR
+			tar sudo tar -zxvf $QUICKSTART_FILE -C $QUICKSTART_DIR --strip-components=1
+		fi
 	fi
 	
 	echo "Installing JBoss AS... Finish."
