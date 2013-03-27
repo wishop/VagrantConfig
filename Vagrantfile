@@ -15,6 +15,8 @@ Vagrant.configure("2") do |config|
   config.vm.box = "precise64"
   config.vm.provision :shell do |shell|
     shell.path = "shell_provision/provision.sh"
+    # update environment: Y or N
+    shell.args= "N"
   end
 
   # The url from where the 'config.vm.box' box will be fetched if it
