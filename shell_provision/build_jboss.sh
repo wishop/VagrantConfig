@@ -33,6 +33,7 @@ if [ ! -d $JBOSS_DIR ]; then
 		sudo echo "./bin/add-user.sh --silent jboss jb055mu" > $JBOSS_DIR/postInstall.sh
 		sudo echo "./bin/add-user.sh --silent -a jbossau jb055au" >> $JBOSS_DIR/postInstall.sh
 		sudo echo "./bin/standalone.sh" >> $JBOSS_DIR/postInstall.sh
+		sudo echo "./bin/standalone.sh" >> $JBOSS_BIN/run.sh
 		sudo chmod 744 $JBOSS_DIR/postInstall.sh
 		
 		# configuring the connection between JBoss and Postgres
