@@ -19,9 +19,9 @@ if [ ! -d $APACHE_DIR ]; then
 	sudo cp -f $APACHE/jboss.conf $APACHE_MODS_AVAILABLE
 
 	# configure aliases
-	sudo cat $APACHE/apache_aliases > ${HOME}/.bash_aliases
+	sudo cat $DATA/apache_aliases > ${HOME}/.bash_aliases
 	sudo . $HOME/.bashrc.sh
-	sudo stopW;startW
+	sudo stopW;startW;
 	
 	echo "Installing Apache 2... Finish."
 	
